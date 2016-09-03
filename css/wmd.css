@@ -1,0 +1,302 @@
+.wmd-panel
+{   position: relative;
+	
+	margin-left:0;
+	margin-right:4em;
+	min-width: 70%;
+	margin-top: 1em;
+	margin-left: 4em;
+	
+}
+
+#wmd-editor
+{
+	background-color: none;
+}
+
+
+#wmd-button-bar 
+   
+{   width:100%;
+	background-color: rgba(0,0,0,0.22); 
+	min-height: 60px;
+	
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border: 1px solid rgba(0,0,0,0.1);
+	
+}
+
+
+ #wmd-input 
+{   position:relative;
+    top:-5px;
+    color: black;
+    font-variant: normal;
+	font-family: 'Droid Sans', sans-serif;
+	font-weight: normal;	
+	font-size: normal;
+	width:100% ;
+	min-height:250px;
+	height:auto;
+	background-color: white;
+	bordor-style:solid;
+	border-width:0 1px 1px 1px;
+	border-color:rgba(0,0,0,0.22);
+	margin-top: 0;
+	margin-left: 0%;
+	resize: vertical;
+	-webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
+    transition: all 0.8s ease;	
+}
+
+
+#wmd-preview 
+{  position: relative;
+	background-color: white; 
+	padding-left: 1em;
+	padding-right: 1em;
+	font-family: "jaf-bernino-sans";
+	font-weight: 400;
+	font-size:1em;
+	font-weight:600;
+	margin-top: 1em;
+	min-height: 10px;
+	height: auto;
+	color: rgba(0, 0, 0, 0.66);
+	
+	
+}
+
+
+#wmd-preview h1,#wmd-preview h2 {
+	color: rgba(0, 0, 0, 0.66);
+	 font-family: "Oswald";
+	 text-transform: capitalize;
+	 font-weight: 700;
+ }
+ 
+ #wmd-preview p strong{
+	font-family:  inherit;
+}
+ #wmd-preview p em{
+	
+}
+
+
+
+div#wmd-preview p, div#wmd-preview ol, div#wmd-preview ul, #wmd-preview p em{
+	text-align: left;
+	display: block;
+	line-height: 2rem;
+	font-size: 1.2rem;
+	color: rgba(0,0,0,0.8);
+	font-weight: 400;
+	letter-spacing: 0.166667px;
+	
+	
+}
+
+
+#wmd-preview blockquote{
+	background: rgba(120,120,120,0.07);
+}
+#wmd-preview blockquote p{
+	font-family: "jaf-bernino-sans";
+	color: rgba(0,0,0,0.8);
+	font-weight: normal;
+}
+#wmd-preview blockquote em{ font-family: "freight-text-pro";	color: rgba(0,0,0,0.6);}
+
+#wmd-preview p a, #wmd-preview h2 a,#wmd-preview h1 a , 
+#wmd-preview ul li a, #wmd-preview ol li a
+{
+	font-family:"proxima-nova";
+	font-weight: bold;
+	font-size:.8em;
+	color: rgba(20,129,86,0.6);
+	border-color: rgba(20,129,86,0.1);
+	border-width:1px;
+	border-style:solid;
+	padding-left:.2em;
+	padding-right:.2em;
+	border-radius: 5px;
+	
+	
+}
+#wmd-preview p a:hover, #wmd-preview h2 a:hover,#wmd-preview h1 a:hover , 
+#wmd-preview ul li a:hover, #wmd-preview ol li a:hover{
+	
+	border-color: rgba(20,129,86,0.7);
+	color: #222;
+	background: rgba(20,129,86,0.1);
+	transition: all 500ms all;
+	-moz-transition: all 500ms all;
+	-webkit-transition: all 500ms all;
+	
+}
+#wmd-preview ol, #wmd-preview ul{
+	font-family: "jaf-bernino-sans";
+	font-weight: normal;
+}
+
+
+#wmd-preview p code{
+ 	font-family: "runda";
+	font-size: .8em;
+	border-radius: 6px;
+	display:inline;
+	padding: .1em;
+	margin-left: .3em;
+	margin-right: .3em;
+	background: rgba(60,128,28,0.1);
+}
+
+#wmd-preview  pre{
+	font-family: "runda";
+	font-size: 1em;
+	padding: 1em;
+	background: rgba(60,128,28,0.1);
+	
+}
+#wmd-preview pre code{
+	padding: 1em;
+	width: 100%;
+	overflow: auto;
+	
+}
+
+
+
+#wmd-output 
+{ 
+	position:relative;
+	width: 300px;
+	background-color: #f1f1f1;
+	display: none;
+     
+}
+
+ul#wmd-button-row 
+{
+	position: relative;
+	float:none; 
+	margin:0;
+		
+}
+
+
+
+li.wmd-button
+{
+	position:relative;
+	padding: .3em;
+	position: absolute;
+	margin:.5em;
+	
+	/* background-image: url("http://cdn.sstatic.net/stackoverflow/img/wmd-buttons.svg"); 
+  
+	background-repeat: no-repeat;
+	background-position: 1px 0px;
+	*/
+	padding-left:.5em;
+	display: inline; 
+	list-style: none;
+	
+	cursor:pointer;	
+ 
+}
+
+li.wmd-button:HOVER >i{
+	color: #1d4e66;
+	   transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -webkit-transition: all 500ms ease;
+}
+
+
+.wmd-spacer
+{
+	width: 2px; 
+	height: 36px; 
+	
+	margin-top: .5em;
+	position: absolute;
+	background-color: gray;
+	display: inline-block; 
+	list-style: none;
+}
+
+
+
+.wmd-button > i{
+	color: #222;
+	cursor: pointer;
+	font-size: 1.3em;
+}
+
+.wmd-button > a
+{
+	width: 20px; 
+	height: 20px; 
+	margin-left: 5px;
+	margin-right: 5px;
+	
+	position: absolute;
+	display: inline-block; 
+}
+
+
+/* sprite button slicing style information */
+#wmd-button-bar #wmd-bold-button    {left: 0%;}
+#wmd-button-bar #wmd-italic-button  {left: 7%;}
+#wmd-button-bar #wmd-spacer1        {left: 23%;}
+#wmd-button-bar #wmd-link-button    {left: 23%;}
+#wmd-button-bar #wmd-quote-button   {left: 30%;}
+#wmd-button-bar #wmd-code-button    {left: 37% ;}
+#wmd-button-bar #wmd-spacer2        {right: 53%;}
+#wmd-button-bar #wmd-olist-button   {right: 44%;}
+#wmd-button-bar #wmd-ulist-button   {right:37%; }
+#wmd-button-bar #wmd-heading-button {right: 30%;}
+#wmd-button-bar #wmd-hr-button      {right: 23%}
+#wmd-button-bar #wmd-spacer3        {right: 23%;}
+#wmd-button-bar #wmd-undo-button    {right: 14%;}
+#wmd-button-bar #wmd-redo-button    {right:7%}
+#wmd-button-bar #wmd-help-button    {right: 0em;}
+
+
+.wmd-prompt-background
+{
+	background-color: Black;
+	border: 1px solid red;
+}
+
+.wmd-prompt-dialog
+{
+	border: 2px solid #222;
+	background-color: #f1f1f1;
+	padding: 1em;
+	border-top: 50px solid #222;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+.wmd-prompt-dialog > div {
+	font-size: 0.8em;
+	font-family: "runda";
+}
+
+
+.wmd-prompt-dialog > form > input[type="text"] {
+	border: 1px solid #999999;
+	color: black;
+}
+
+.wmd-prompt-dialog > form > input[type="button"]{
+	border: 3px solid #333;
+	font-family: "runda";
+	font-size: 0.8em;
+	font-weight: bold;
+}
