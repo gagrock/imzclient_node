@@ -127,7 +127,7 @@ setting.buildPassword = function(){
 			"</a></i>" +
 			"</li>" +
 			" </ul> </li>" +
-			"<li class=' cpass-msg small-12 medium-6 large-5 columns  '>" +
+			"<li class=' cpass-msg small-12 medium-7 large-7 columns  '>" +
 			"<li class=' npass-msg small-12 medium-6 large-5 large-pull-3 medium-pull-3 columns  '>" +
 			 "</li>";
 	$('#pass').append(x3);
@@ -169,9 +169,9 @@ setting.buildDeleteAccount = function(){
 	 		"articles would stay with us and would be made anonymous!" +
 	 		" </p>" +
 	 		"</li>" +
-	 		"<li class='small-12 large-4 pull-1  medium-5 columns'>"+
+	 		"<li class='small-12 large-3 pull-1  medium-5 columns'>"+
 	 		" <a id='del-ac' class='button-a red-button small-push-3" +
-	 		" large-push-5 medium-push-4 center'><i class='fa fa-trash'></i> delete your account</a>" +
+	 		" large-push-5 medium-push-4 center'><i class='fa fa-trash'></i> delete account</a>" +
 	 		"</li></ul></li>";
 	 		
 	 $('.user-prof-timeline').append(x4);		
@@ -323,39 +323,16 @@ setting.buildHistory = function(){
 };
 
 setting.buildNav = function(){
-	var nav ="<nav class='user-info  small-12 large-2 medium-12 columns '>" +
-			"<ul class='side-nav '>" +
-			"<li class='active'><a id='profile'> <i class='fa fa-lg fa-qq'></i>profile</a></li>" +
-			"<li class='divider'></li>" +
-			"<li><a id='history'><i class='fa fa-lg fa-history'></i>history</a></li>" +
-			"<li class='divider'></li>" +
-			"<li><a id='logout'><i class='fa fa-lg fa-power-off'></i>sign out</a></li>" +
-			"<li class='divider'></li></ul></nav>" +
-			"<div class='user-get-info  small-12 large-10 medium-12 columns '></div>" ;
+	var nav ="" ;
 	
 		$('.user-wrapper').append(nav);
 };
 
 setting.toggleNav = function(){
-	this.buildNav();
+	//this.buildNav();
 	this.buildUserProfile();
 	setting.processEdit();
-	$('#profile').on('click',function(){
-		setting.buildUserProfile();
-		$(this).parent().addClass('active');
-		$('#history').parent().removeClass('active');
-		setting.processEdit();
-	});
-	$('#history').on('click',function(){
-		setting.buildHistory();
-		$(this).parent().addClass('active');
-		$('#profile').parent().removeClass('active');
-	
-	});
-	$('#logout').on('click',function(){
-		Auth.logout();
-	});
-	
+
 	// Register method to delete account
 		this.processDeleteAccount();
 };

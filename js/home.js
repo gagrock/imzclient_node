@@ -1,8 +1,3 @@
-/**
- * 
- */
-
-
 
 log('home.js');
 
@@ -42,7 +37,7 @@ home.getTrendingArticle = function(article){
 	var p_id = "t_" + article.id;
 
 	var fp =  article.id+'/'+article.user.username+'/'+Base64.decode(article.title).split(" ").join("-");
-	var h_href = "./home/user/article#"+fp;
+	var h_href = "./article#"+fp;
 	var img = article.src;
 	var index =util.getRandomNumber(0, article.tags.length-1);
 	 
@@ -196,6 +191,7 @@ publicAjax.processError = function(role,status){
 };
 
 home.processHome = function(){
+	Auth.loggedIn();
 	this.bubbleChew();
 
 	Ajax.GET(publicAjax);

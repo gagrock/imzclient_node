@@ -1,5 +1,4 @@
-<%@ page language='java' contentType='text/html; charset=UTF-8'
-    pageEncoding='UTF-8'%>
+
 <!DOCTYPE html>
 <html class='no-js' >
     <head>
@@ -9,14 +8,14 @@
         <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no'>
 
    
-		        <link rel='stylesheet' href='../../css/normalize.css'>
-		       	<link rel='stylesheet' href='../../css/pushy.css'>
-		        <link rel='stylesheet' href='../../css/app.css'>
-				<link rel='stylesheet' href='../../css/app-font.css'>
-		       	<link rel='stylesheet' href='../../css/foundation.css'>
-		        <link rel='stylesheet' href='../../css/jquery-ui.css'>
+		        <link rel='stylesheet' href='/css/normalize.css'>
+		       	<link rel='stylesheet' href='/css/pushy.css'>
+		        <link rel='stylesheet' href='/css/app.css'>
+				<link rel='stylesheet' href='/css/app-font.css'>
+		       	<link rel='stylesheet' href='/css/foundation.css'>
+		        <link rel='stylesheet' href='/css/jquery-ui.css'>
 		        <script src="https://use.fontawesome.com/1083451c67.js"></script>
-		        <script src='../../js/modernizr.js'></script>
+		        <script src='/js/modernizr.js'></script>
     </head>
    
     <body class='article-body' >
@@ -35,22 +34,22 @@
 	    
 	    	 <ul class="side-nav" role="navigation" >
 			   <li role="menuitem">
-				   <a href="${pageContext.request.contextPath}/">
+				   <a href="/">
 				   		<i class="fa fa-lg fa-home align" aria-hidden="true"></i>home
 				   </a>
 			   </li>
 			   <li role="menuitem">
-				   	<a href="${pageContext.request.contextPath}/home/explore">
+				   	<a href="/explore">
 				   		<i class="fa fa-lg fa-industry align" aria-hidden="true"></i>explore
 				   	</a>
 			   	</li>
 			   <li role="menuitem">
-				   	<a href="${pageContext.request.contextPath}/home/user/editor">
+				   	<a href="//editor">
 				   		<i class="fa fa-lg fa-pencil-square-o align" aria-hidden="true"></i>write
 				   	</a>
 			   </li>
 			   <li role="menuitem">
-				   	<a href="${pageContext.request.contextPath}/home/user/signup">
+				   	<a href="/signup">
 				   		<i class="fa fa-lg fa-sign-in align" aria-hidden="true"></i>sign-in
 				   	</a>
 			   	</li>
@@ -91,22 +90,22 @@
 <div id='container'>
 			<nav class='sub-menu'>
     	<i class='fa fa-2x fa-bars menu-btn menu ' id='menu'></i>
-    	<a  href='${pageContext.request.contextPath}/home/user/signup'
+    	<a  href='/signup'
     	 class='  button-a signUp blue-button fade-border hide-for-small 
     	 float-right font-runda-heading-link ' >sign in/sign up</a>
 		
-			<a href='${pageContext.request.contextPath}/home/explore' class=' header-link-black fade-border font-runda-heading-link float-right hide-for-small '>
+			<a href='/explore' class=' header-link-black fade-border font-runda-heading-link float-right hide-for-small '>
 			      <span class='fa fa-lg fa-newspaper-o' ></span>explore
 			 </a>
     </nav>
 	
 		<header class='app-header '>
 		<i class='fa fa-2x fa-bars menu-btn menu ' id='menu'></i>
-        <a  href='${pageContext.request.contextPath}/home/user/signup'
+        <a  href='/signup'
         class='  button-a signUp blue-button fade-border hide-for-small
          float-right font-runda-heading-link '>sign in/sign up</a>
 		
-			<a href='${pageContext.request.contextPath}/home/explore' class=' header-link-black fade-border font-runda-heading-link float-right hide-for-small '>
+			<a href='/explore' class=' header-link-black fade-border font-runda-heading-link float-right hide-for-small '>
 			      <span class='fa fa-lg fa-newspaper-o' ></span>explore
 			 </a>
 			
@@ -242,14 +241,14 @@
   
 
 </footer>
-    <script src='../../js/jquery-1.11.3.js'></script>
-	<script src="../../js/fastclick.js"></script>
-    <script src="../../js/foundation.min.js"></script>
-	<script src='../../js/pushy.min.js'></script>
-	<script src='../../js/util.js'></script>
-	<script src='../../js/menu.js'></script>
-	<script src="../../js/autosize.min.js"></script>
-	<script src='../../js/main-article.js'></script>
+    <script src='/js/jquery-1.11.3.js'></script>
+	<script src="/js/fastclick.js"></script>
+    <script src="/js/foundation.min.js"></script>
+	<script src='/js/pushy.min.js'></script>
+	<script src='/js/util.js'></script>
+	<script src='/js/menu.js'></script>
+	<script src="/js/autosize.min.js"></script>
+	<script src='/js/article.js'></script>
 
 <script>
       $(document).foundation();

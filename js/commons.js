@@ -16,10 +16,8 @@ headerhtml = {
 				"class='float-left' id='write'>" +
 				"<span class='fa fa-lg fa-pencil-square-o'></span><b class='hide-for-small-only'> write</b>  </a>" +
 				"<a  class='float-left' id='your-article'>" +
-				"<span  class='fa fa-lg fa-list-alt'></span><b class='hide-for-small-only'> past articles </b>" +
+				"<span  class='fa fa-lg fa-list-alt'></span><b class='hide-for-small-only'> your articles </b>" +
 				"	</a>" +
-				"<a  class='float-left' id='explore'>" +
-				"<span  class='fa fa-lg fa-folder '></span> <b class='hide-for-small-only'> explore</b> </a>" +
 				"<a " +
 				"class='float-left' id='account'>" +
 				"<span  class='fa fa-lg  fa-gear '></span> <b class='hide-for-small-only'>account </b></a>" +
@@ -37,25 +35,27 @@ userheader.processHeader = function(user){
 	
 	$('.body').prepend(headerhtml.header);
 	$('.home-header').append(headerhtml.ul_header).append(headerhtml.ul_tools);
-	//add the logout to the header except the setting page
-      if(location.href.split('/').pop() !== 'setting'){
+	 $('.ul-tools').append(headerhtml.logout);
+	/*
+		//add the logout to the header except the setting page
+      if(location.href.split('/').pop() !== 'account'){
     	  $('.ul-tools').append(headerhtml.logout);
       }
 	
+	*/
 	$('.ul-tools a').on('click',function(){
 		var id = $(this).attr('id');
 		if(id === 'write') {location.replace('./editor');}
-		if(id === 'explore') {location.replace('./explore');}
 		if(id === 'your-article') {location.replace('./articles');}
-		if(id === 'account') {location.replace('./setting');}
+		if(id === 'account') {location.replace('./account');}
 		if(id === 'logout') {Auth.logout();}
 	
 	});
 	
 	$('.ul-header a').on('click',function(){
 		var id = $(this).attr('id');
-		if(id === 'home') location.replace('../../');
-		if(id === 'self_user') location.replace('./setting');
+		if(id === 'home') location.replace('./');
+		if(id === 'self_user') location.replace('./account');
 	});
 	$('#u_title').html(user.username+"| wemater.org");
 	$('#self_user').html("<span class='fa fa-lg fa-user'></span>"+user.username);

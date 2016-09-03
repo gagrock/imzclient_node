@@ -81,9 +81,9 @@ userarticle.buildArticleWithEvents = function(article) {
 	var a_id = "a_" + article.id;
 	var t_id = "t_" + article.id;
 	var p_id = "t_" + article.id;
-    var fp =  article.id+'#'+article.user.username+'#'+article.title;
-
-	 var h_href = "./article#"+Base64.encodeObase(fp);
+    var fp =  article.id+'/'+article.user.username+'/'+Base64.decode(article.title).split(" ").join("-");
+	log(fp);
+	var h_href = "./article#"+fp;
 	
    var articleString = this.getArticleString(article, a_id, p_id, t_id,h_href);
    $('.your-articles').append(articleString);

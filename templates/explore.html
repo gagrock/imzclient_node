@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html class="no-js" >
 <head>
@@ -18,22 +17,18 @@
  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
  
  
-<link rel="stylesheet" href="../css/normalize.css">
-<link rel="stylesheet" href="../css/pushy.css">
-<link rel="stylesheet" href="../css/app.css">
-<link rel="stylesheet" href="../css/app-font.css">
-<link rel="stylesheet" href="../css/foundation.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/pushy.css">
+<link rel="stylesheet" href="/css/app.css">
+<link rel="stylesheet" href="/css/app-font.css">
+<link rel="stylesheet" href="/css/foundation.css">
 
 <script src="https://use.fontawesome.com/1083451c67.js"></script>
 
 </head>
    
     <body class="home-body" >
- 	<!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->	
-	
-	<!-- Pushy Menu -->
+
 	<nav class="pushy pushy-left nav-side">
 	
 	    <div class="small-12 large-12 medium-12  nav-badge">
@@ -43,22 +38,22 @@
 	    
 	    	 <ul class="side-nav" role="navigation" >
 			   <li role="menuitem">
-				   <a href="${pageContext.request.contextPath}/">
+				   <a href="/">
 				   		<i class="fa fa-lg fa-home align" aria-hidden="true"></i>home
 				   </a>
 			   </li>
 			   <li role="menuitem">
-				   	<a href="${pageContext.request.contextPath}/home/explore">
+				   	<a href="/explore">
 				   		<i class="fa fa-lg fa-industry align" aria-hidden="true"></i>explore
 				   	</a>
 			   	</li>
 			   <li role="menuitem">
-				   	<a href="${pageContext.request.contextPath}/home/user/editor">
+				   	<a href="/editor">
 				   		<i class="fa fa-lg fa-pencil-square-o align" aria-hidden="true"></i>write
 				   	</a>
 			   </li>
 			   <li role="menuitem">
-				   	<a href="${pageContext.request.contextPath}/home/user/signup">
+				   	<a href="/signup">
 				   		<i class="fa fa-lg fa-sign-in align" aria-hidden="true"></i>sign-in
 				   	</a>
 			   	</li>
@@ -97,21 +92,21 @@
 <div id="container">
 	<nav class="sub-menu">
     	<i class="fa fa-2x black-color fa-bars menu-btn menu " id="menu"></i>
-    	<a  href="${pageContext.request.contextPath}/home/user/signup"
+    	<a  href="/signup"
     	 class=" button-a signUp blue-button fade-border hide-for-small 
     	 float-right font-runda-heading-link " >sign in/sign up</a>
 	
-			<a href="${pageContext.request.contextPath}/home/explore" class=" header-link-black fade-border font-runda-heading-link float-right hide-for-small ">
+			<a href="/explore" class=" header-link-black fade-border font-runda-heading-link float-right hide-for-small ">
 			      <span class="fa fa-lg fa-newspaper-o" ></span>explore
 			 </a>
     </nav>
 	
 		<header class="app-header ">
 		<i class="fa fa-2x fa-bars menu-btn menu " id="menu"></i>
-        <a  href="${pageContext.request.contextPath}/home/user/signup"
+        <a  href="/signup"
         class=" button-a signUp blue-button fade-border hide-for-small
          float-right font-runda-heading-link ">sign in/sign up</a>
-			<a href="${pageContext.request.contextPath}/home/explore" class=" header-link-black fade-border font-runda-heading-link float-right hide-for-small ">
+			<a href="/explore" class=" header-link-black fade-border font-runda-heading-link float-right hide-for-small ">
 			      <span class="fa fa-lg fa-newspaper-o" ></span>explore
 			 </a>
 			
@@ -177,13 +172,13 @@
 	</footer>
 
         <!-- Pushy JS -->
-        <script src='../js/modernizr.js'></script>
-	   	<script src='../js/jquery-1.11.3.js'></script>
-		<script src="../js/modernizr.js"></script>
-	    <script src='../js/pushy.min.js'></script>
-        <script src='../js/util.js'></script>
-        <script src='../js/menu.js'></script>
-        <script src='../js/explore.js'></script>
+        <script src='/js/modernizr.js'></script>
+	   	<script src='/js/jquery-1.11.3.js'></script>
+		<script src="/js/modernizr.js"></script>
+	    <script src='/js/pushy.min.js'></script>
+        <script src='/js/util.js'></script>
+        <script src='/js/menu.js'></script>
+        <script src='/js/explore.js'></script>
 
 
 		<script>

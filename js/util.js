@@ -495,9 +495,12 @@ var Auth = {
 	  },
 	  loggedIn :function(){
 	       var encodedAuth =  sessionStorage.getItem('_auth');
-	       var user = sessionStorage.getItem('_user');
+	       var user = util.getObjectFromSession('_user');
+	       log(user);
+	       log(encodedAuth);
 	        if(encodedAuth  && user ){
-	        	log('Logged in true');
+	        	log('Logged from isloggedin in true');
+	        	Auth.updateSignupButton(user);
 	        	return true;
 	         }
 	        else return false;
@@ -508,12 +511,23 @@ var Auth = {
 	        if(encodedAuth !==  null && user !== null){
 	     	 location.replace("./articles");
 	        }
-	        
+
 	  },
 	  logout :function(){
 		  sessionStorage.clear();
 		  location.replace('./signup');
-	  }
+	  },
+	  updateSignupButton : function(user){
+		if (user) {
+			$('.signUp')
+					.html("<i class='fa fa-user'></i>" + user.name)
+					.attr("href", "./account")
+					.css('border-radius','10px');
+					
+		}
+	}
+
+
 };
 
 

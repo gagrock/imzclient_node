@@ -2047,10 +2047,11 @@ ul.side-nav-footer li a:hover{
 .poster{
 	position: relative;
 	top: 80px;
-	width : 100%;
-	background : transparent;
+	width: 80%;
+	background: transparent;
 	text-align: center;
-	padding: 2em;	
+	padding: 2em;
+	margin-left: 10%;	
 }
 
 
@@ -2060,6 +2061,7 @@ ul.side-nav-footer li a:hover{
 	     font-weight:400;
 	    text-transform: capitalize;
 	    line-height: 1.3em;
+	   
 	   
 	  
 }
@@ -2220,15 +2222,13 @@ a.chev-down i:HOVER,a.chev-down-a:hover{
 }
 
  .red-button{
-    color: #b42b1c;
-    border-color: #b42b1c;
+    color: white;
+      border-color: #c84d3f;
+    background: #b42b1c;
+     padding:.5em;
 
  }
- .red-button:hover{
-    color: white;
-    border-color: #c84d3f;
-    background: #b42b1c;
- }
+
   
       
  .white-button , .blue-button{

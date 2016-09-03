@@ -7,7 +7,7 @@ var Explore = {
 		isbfrePresent : true,
 		init : function(){
 		this.user = util.getObjectFromSession('_user');	
-			
+		Auth.loggedIn();	
 		}
         
 		
@@ -28,7 +28,7 @@ Explore.buildArticle = function( article){
 			
 			var fp =  article.id+'/'+article.user.username+'/'+Base64.decode(article.title).split(" ").join("-");
 			  log(fp);
-			  var h_href = "./user/article#"+fp;
+			  var h_href = "./article#"+fp;
 
 	  	var f_content = "<p>"+$(Base64.decode(article.content)).text().split(" ").slice(0, 80).join(" ")+"...<p>";
 
@@ -88,7 +88,7 @@ Explore.getTopArticleString = function(article){
 	var a_id = 'ar_'+article.id;
 	  var fp =   article.id+'/'+article.user.username+'/'+Base64.decode(article.title).split(" ").join("-");
 		log(fp);
-	  var h_href = "./user/article#"+fp;
+	  var h_href = "./article#"+fp;
   
 	 var string =  "<dt><a id='"+a_id+"'>"+Base64.decode(article.title)+"</a></dt>"+
 			"<dd><a><span class='fa fa-user'></span>"+article.user.name+"</a></dd>"; 

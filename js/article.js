@@ -35,15 +35,6 @@ var MainArticle = {
 		}
 		$('.comment-author').html(message);
 		
-	},
-	updateSignupButton : function(){
-		if (this.user) {
-			$('.signUp')
-					.html("<i class='fa fa-user'></i>" + this.user.username)
-					.attr("href", "./setting")
-					.css('border-radius','20px')
-					.css('border-color', "rgba(0,120,60,0.8)");
-		}
 	}
 };
 
@@ -54,7 +45,7 @@ MainArticle.buildCurrentArticle = function(article) {
 		log("inside build article " + article.title);
 		var title = "<h1>"+Base64.decode(article.title)+"</h1>";
 		$('#a_t').html(Base64.decode(article.title) + " | imzah.com");
-		this.updateSignupButton();
+		Auth.updateSignupButton();
 	
 		$('.main-article-cover')
 		   .css({ "visibility" : 'visible'})
