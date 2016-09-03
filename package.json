@@ -1,0 +1,20 @@
+{
+  "name": "imzclient_node",
+  "version": "1.0.0",
+  "description": "node server for imz client",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gagrock/imzclient_node.git"
+  },
+  "author": "irshad ahmad sheikh (https://github.com/gagrock)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/gagrock/imzclient_node/issues"
+  },
+  "homepage": "https://github.com/gagrock/imzclient_node#readme"
+}
