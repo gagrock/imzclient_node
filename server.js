@@ -5,7 +5,7 @@ var path = require('path');
 
 function server(){
 	this.app = express();
-	this.port = process.env.OPENSHIFT_NODEJS_PORT || 8010;
+	this.port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 	this.ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
     this.configRoutesDirs = function(){ 
     	 

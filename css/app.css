@@ -1938,13 +1938,13 @@ ul.home-header-ul li{
 	/*background-image: url("../img/invitesack.svg"); */
 	background-repeat: no-repeat;
 	background-position:20% 20%;
-	padding: 3em;
-	padding-left: 4.2em;
-	
+	height: auto;
+	min-height: 230px;
 }
 
 
 .box {
+position:  relative;
   background: #2db34a;
   border-radius: 6px;
   cursor: pointer;
@@ -1957,11 +1957,35 @@ ul.home-header-ul li{
   width: 120px;
   font-size: 2em;
   color: #ffffff;
+  border-radius: 50%;
+  left: 2em;
+  top: 1em;
 
 }
-.box:hover {
-  background: #d76a17;
-  border-radius: 50%;
+.inlinec-list {
+  list-style: none;
+  margin-left: -1.375rem;
+  margin-right: 0;
+  margin: 0 auto 1.0625rem auto;
+  overflow: hidden;
+   }
+  .inlinec-list > li {
+    display: block;
+    float: left;
+    list-style: none;
+    margin-left: 1.375rem; }
+    .inlinec-list > li > * {
+      display: block; }
+
+.profInfo{
+	position: relative;
+	background: #2db34a;
+	top: 78px;
+	padding: .2em;
+
+}
+.profInfo li a{
+	color: white;
 }
 
 .nav-wrapper{
