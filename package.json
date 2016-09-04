@@ -2,6 +2,7 @@
   "name": "imzclient_node",
   "version": "1.0.0",
   "description": "node server for imz client",
+   "private": true,
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,5 +20,9 @@
   "homepage": "https://github.com/gagrock/imzclient_node#readme",
   "dependencies": {
     "express": "^4.14.0"
+  },
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
   }
 }
