@@ -1960,6 +1960,9 @@ position:  relative;
   border-radius: 50%;
   left: 2em;
   top: 1em;
+-webkit-box-shadow: -1px 2px 5px -3px rgba(13,12,13,1);
+-moz-box-shadow: -1px 2px 5px -3px rgba(13,12,13,1);
+box-shadow: -1px 2px 5px -3px rgba(13,12,13,1);
 
 }
 .inlinec-list {
@@ -1979,15 +1982,18 @@ position:  relative;
 
 .profInfo{
 	position: relative;
-	background: #2db34a;
+	background: #60d817;
 	top: 78px;
 	padding: .2em;
-
+	font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+	font-weight:400;
 }
 .profInfo li a{
 	color: white;
 }
-
+.profInfo li a > i{
+	color: #0078ff;
+}
 .nav-wrapper{
 	
 	margin-top: 2em;

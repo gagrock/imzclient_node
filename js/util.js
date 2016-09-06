@@ -515,14 +515,29 @@ var Auth = {
 	  },
 	  logout :function(){
 		  sessionStorage.clear();
-		  location.replace('./signup');
+		  location.replace('./');
 	  },
 	  updateSignupButton : function(user){
+	  	//
 		if (user) {
 			$('.signUp')
-					.html("<i class='fa fa-user'></i>" + user.name)
+					.html("<i class='fa fa-gear'></i>" + user.name)
 					.attr("href", "./account")
-					.css('border-radius','10px');
+					.css('border-radius','30px')
+					.css('padding',".3em 1em .3em 1em")
+					.css('-webkit-box-shadow '," 0px 0px 0px 0px rgba(13,12,13,1)");
+					
+			$('#singupCover')
+						.html('<a>'+
+				   		       '<i class="fa fa-lg fa-sign-out align" aria-hidden="true">'+
+				   		       '</i>sign out</a>')
+						.on('click',function(){Auth.logout();});	
+
+			var acct = '<ul class="inlinec-list profInfo"><li><a href="/account">'+
+			           '<i class="fa fa-certificate" aria-hidden="true"></i>'+
+						'Irshad ahmad sheikh </a></li></ul>';
+			$('.nav-badge').append(acct);			
+				
 					
 		}
 	}
