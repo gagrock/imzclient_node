@@ -36,8 +36,8 @@ home.getTrendingArticle = function(article){
 	var t_id = "t_" + article.id;
 	var p_id = "t_" + article.id;
 
-	var fp =  article.id+'/'+article.user.username+'/'+Base64.decode(article.title).split(" ").join("-");
-	var h_href = "./article#"+fp;
+    var fp = article.user.username+'/articles/'+article.id+"/"+Base64.decode(article.title).split(" ").join("-");
+	var h_href = "./"+fp;
 	var img = article.src;
 	var index =util.getRandomNumber(0, article.tags.length-1);
 	 

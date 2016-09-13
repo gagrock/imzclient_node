@@ -1,6 +1,8 @@
 var express = require('express');
 var fs      = require('fs');
 var path = require('path');
+var useragent = require('useragent');
+useragent(true);
 //var app = express();
 
 function server(){
@@ -12,16 +14,22 @@ function server(){
     	 this.app.use('/css',express.static(path.join(__dirname, '/css')))
 			    .use('/js',express.static(path.join(__dirname, '/js')))
 				.use('/img',express.static(path.join(__dirname, '/img')))
+				.use('/sitemap',express.static(path.join(__dirname, '/sitemap.xml')))
+				.use(require('prerender-node').set('prerenderToken', 'qgpXq9plHix3AZDCa3Xp'))
 				.get('/', function(req, res) {
+					checkUserAgent(req);
 			    	res.sendFile(path.join(__dirname + '/templates/home.html'));
 				})
 				.get('/explore', function(req, res) {
+					console.log(req.url);
 			    	res.sendFile(path.join(__dirname + '/templates/explore.html'));
 				})
 				.get('/signup', function(req, res) {
+					console.log(req.url);
 			    	res.sendFile(path.join(__dirname + '/templates/signup.html'));
 				})
 				.get('/editor', function(req, res) {
+
 			    	res.sendFile(path.join(__dirname + '/templates/editor.html'));
 				})
 				.get('/articles', function(req, res) {
@@ -30,11 +38,13 @@ function server(){
 				.get('/account', function(req, res) {
 			    	res.sendFile(path.join(__dirname + '/templates/account.html'));
 				})
-				.get('/article', function(req, res) {
+				.get('/:author/articles/:id/:title', function(req, res) {
+					
 			    	res.sendFile(path.join(__dirname + '/templates/article.html'));
 				});
 		   
 			};
+
 	this.start = function(){
 			 var port = this.port;
 			 var ip = this.ip_address;		
@@ -43,8 +53,14 @@ function server(){
 				});
 	};
 
+	
+
 } //
 
+checkUserAgent = function(req){
+		var agent = useragent.parse(req.headers['user-agent']);
+		console.log("useragent: "+agent);
+	};
 
 var AppServer = new server();
 	AppServer.configRoutesDirs();

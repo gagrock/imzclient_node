@@ -21,61 +21,60 @@ Explore.buildTimeLine = function(){
 
 Explore.buildArticle = function( article){
 	  
-			var a_id = "a_" + article.id;
-			var t_id = "t_" + article.id;
-			var p_id = "t_" + article.id;
-			var c_id = "c_" + article.id;
-			
-			var fp =  article.id+'/'+article.user.username+'/'+Base64.decode(article.title).split(" ").join("-");
-			  log(fp);
-			  var h_href = "./article#"+fp;
+		var a_id = "a_" + article.id;
+		var t_id = "t_" + article.id;
+		var p_id = "t_" + article.id;
+		var c_id = "c_" + article.id;
+		
+		var fp = article.user.username+'/articles/'+article.id+"/"+Base64.decode(article.title).split(" ").join("-");
+		var h_href = "./"+fp;
 
-	  	var f_content = "<p>"+$(Base64.decode(article.content)).text().split(" ").slice(0, 80).join(" ")+"...<p>";
+		var f_content = "<p>"+$(Base64.decode(article.content)).text().split(" ").slice(0, 80).join(" ")+"...<p>";
 
-	      
-	     var articleStructure = "<article id ='"+a_id+"' class=' explore-article small-12 medium-12 large-8  large-centered column'>" +
-    		"<div class='explore-article-top '>" +
-    		" <div class='article-date large-4 small-6 medium-4 columns '>" +
-    		"<span><i class='fa fa-lg fa-calendar'></i>" +
-    		 article.date +
-    		" </span>" +
-    		"</div>" +
-    		"<div class=' article-like large-4 small-4 medium-4 columns  '>" +
-    		"<ul class='no-list-style'>" +
-    		"<li><a><span class='fa fa-lg fa-heart'></span>"+article.likes+"</a></li>" +
-    		" </ul>" +
-    		"</div>" +
-    		"</div>" +
-    		"<div class='explore-article-title '>" +
-    		"<a  href='"+h_href+"' id = '"+t_id+"'>  "+Base64.decode(article.title)+"</a>" +
-    		"</div>" +
-    		" <div  class='"+p_id+" explore-article-cover' style = 'background: "+
-			 "linear-gradient(rgba(255, 255, 255, 0.1), rgba(25, 155, 255, .2), rgba(25, 5, 255, .1)),"+
-			 "url(" + article.src + ") no-repeat 100% 50% ; background-size:cover; cursor:pointer;'>" +
-    		" </div>" +
-    		"<div class='explore-article-content '>" +
-    		"<ul class='no-list-style'>" +
-    		"<li>" +
-    		"<div class='exp-content font-heading-oswald-para'> "+f_content+" </div>" +
-    		"</li>" +
-    		"<li>" +
-    		" <ul>" +
-    		"<li><a><span class = 'fa fa-user'></span><span class='font-runda-explore-link'>"+article.user.name+"</span></a></li>" +
-    		" <li class='continue-read'><a class='"+c_id+"'>continue reading	</a> </li>" +
-    		"</ul>" +
-    		"</li>" +
-    		"</ul>" +
-    		"</div>" +
-    		"</article>";
-	         if(this.isbfrePresent){ $('.bfre-exp').remove(); this.isbfrePresent = false;}
-	         
-	    
-	         $('.explore-timeline').append(articleStructure);   
-	         
-	         $('.'+p_id+" , "+'.'+c_id).on('click',function(){
-	        	  window.location.href = h_href;
-	         });
-	   
+      
+     	var articleStructure = "<article id ='"+a_id+"' class=' explore-article small-12 medium-12 large-8  large-centered column'>" +
+		"<div class='explore-article-top '>" +
+		" <div class='article-date large-4 small-6 medium-4 columns '>" +
+		"<span><i class='fa fa-lg fa-calendar'></i>" +
+		 article.date +
+		" </span>" +
+		"</div>" +
+		"<div class=' article-like large-4 small-4 medium-4 columns  '>" +
+		"<ul class='no-list-style'>" +
+		"<li><a><span class='fa fa-lg fa-heart'></span>"+article.likes+"</a></li>" +
+		" </ul>" +
+		"</div>" +
+		"</div>" +
+		"<div class='explore-article-title '>" +
+		"<a  href='"+h_href+"' id = '"+t_id+"'>  "+Base64.decode(article.title)+"</a>" +
+		"</div>" +
+		" <div  class='"+p_id+" explore-article-cover' style = 'background: "+
+		 "linear-gradient(rgba(255, 255, 255, 0.1), rgba(25, 155, 255, .2), rgba(25, 5, 255, .1)),"+
+		 "url(" + article.src + ") no-repeat 100% 50% ; background-size:cover; cursor:pointer;'>" +
+		" </div>" +
+		"<div class='explore-article-content '>" +
+		"<ul class='no-list-style'>" +
+		"<li>" +
+		"<div class='exp-content font-heading-oswald-para'> "+f_content+" </div>" +
+		"</li>" +
+		"<li>" +
+		" <ul>" +
+		"<li><a><span class = 'fa fa-user'></span><span class='font-runda-explore-link'>"+article.user.name+"</span></a></li>" +
+		" <li class='continue-read'><a class='"+c_id+"'>continue reading	</a> </li>" +
+		"</ul>" +
+		"</li>" +
+		"</ul>" +
+		"</div>" +
+		"</article>";
+         if(this.isbfrePresent){ $('.bfre-exp').remove(); this.isbfrePresent = false;}
+         
+    
+         $('.explore-timeline').append(articleStructure);   
+         
+         $('.'+p_id+" , "+'.'+c_id).on('click',function(){
+        	  window.location.href = h_href;
+         });
+   
 };
 
 Explore.buildTag = function(index,tag){
@@ -86,18 +85,17 @@ Explore.buildTag = function(index,tag){
 Explore.getTopArticleString = function(article){
 	
 	var a_id = 'ar_'+article.id;
-	  var fp =   article.id+'/'+article.user.username+'/'+Base64.decode(article.title).split(" ").join("-");
-		log(fp);
-	  var h_href = "./article#"+fp;
-  
-	 var string =  "<dt><a id='"+a_id+"'>"+Base64.decode(article.title)+"</a></dt>"+
-			"<dd><a><span class='fa fa-user'></span>"+article.user.name+"</a></dd>"; 
-	 
-	 $(".ul-explore-top").on('click','#'+a_id,function(){
-		window.location.href = h_href;
-	 });
-	 
-	 return string;
+	var fp = article.user.username+'/articles/'+article.id+"/"+Base64.decode(article.title).split(" ").join("-");
+	var h_href = "./"+fp;
+
+	var string =  "<dt><a id='"+a_id+"'>"+Base64.decode(article.title)+"</a></dt>"+
+	"<dd><a><span class='fa fa-user'></span>"+article.user.name+"</a></dd>"; 
+
+	$(".ul-explore-top").on('click','#'+a_id,function(){
+	window.location.href = h_href;
+	});
+
+	return string;
 	 
 };
 Explore.attachTopArticles =  function(articleString){

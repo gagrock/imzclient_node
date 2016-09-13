@@ -2,7 +2,7 @@
   "name": "imzclient_node",
   "version": "1.0.0",
   "description": "node server for imz client",
-   "private": true,
+  "private": true,
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,7 +19,11 @@
   },
   "homepage": "https://github.com/gagrock/imzclient_node#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "prerender-node": "^2.4.0",
+    "request": "^2.74.0",
+    "useragent": "^2.1.9",
+    "yamlparser": "0.0.2"
   },
   "engines": {
     "node": ">= 0.6.0",

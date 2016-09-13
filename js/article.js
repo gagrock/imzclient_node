@@ -204,25 +204,22 @@ MainArticle.validateCommentOnSubmit = function() {
 //below are topic methods
 
 MainArticle.getTopArticleString = function(article) {
-            var tr_id = 'tr_'+article.id;
-            var fp =   article.id+'/'+article.user.username+'/'+Base64.decode(article.title).split(" ").join("-");
-  
-    	  var h_href = "./article#"+fp;
-            
+	var tr_id = 'tr_'+article.id;
+	var fp = article.user.username+'/articles/'+article.id+"/"+Base64.decode(article.title).split(" ").join("-");
+	var h_href = "./"+fp;
+
 	var string= "<dt><a  id= '"+tr_id+"'>" +
-			Base64.decode(article.title) + "</a></dt>"+
-			 "<dd><a><span class='fa fa-user'></span>"+
-			 article.user.name + "</a></dd>";
-	
+		Base64.decode(article.title) + "</a></dt>"+
+		"<dd><a><span class='fa fa-user'></span>"+
+		article.user.name + "</a></dd>";
+
 	$('.suggest-wrapper').on('click','#'+tr_id,function(){
 		$("html, body").animate({ scrollTop: 0 }, 300);
-		setTimeout(function(){
+			setTimeout(function(){
 			location.href = h_href;
 			location.reload();
 		}, 1000);
-		
-		
-		
+
 	});
 	
 return string;
@@ -338,11 +335,11 @@ var  mainArticleAjax = {
 		isProgress: true,
 		prejax : function() {
 			 var h_ref = window.location.href;
-			var arr = h_ref.split('#')[1].split("/");
-			var a_id = arr[0];
-			var username = arr[1];
+			var f_url = h_ref.split("/");
+			var a_id = f_url[5];
+			var username = f_url[3];
             this.url = Ajax.AllUserURL+"/"+username+"/articles/"+a_id;
-			log("URL part in window= "+arr);
+			log("URL part in window= "+f_url);
 			log("url is:" + this.url);
 			progressBar.append = false;
 			progressBar.height = 10;
@@ -543,7 +540,7 @@ MainArticle.processAllArticle = function() {
      if(util.isUrlPresent()){
     	 Ajax.GET(mainArticleAjax);
     	 var t = setInterval(function(){
-    		 log('plling in main article');
+    		 log('polling in main article');
     		 if(mainArticleAjax.isProgress === false){
     			
     			 MainArticle.preprocess();

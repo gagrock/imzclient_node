@@ -630,7 +630,8 @@ util.chunkString = function(str, length) {
 };
 
 util.isUrlPresent = function(){
-	if(window.location.href.split("#").length == 2) return true;
+
+	if(window.location.href.split("/").length == 7) return true;
 	else return false;
 	
 };
