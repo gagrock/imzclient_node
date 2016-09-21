@@ -489,7 +489,7 @@ var Auth = {
 		        if(encodedAuth ===  null && user === null){
 		        	log('nulls present. login not present');
 		        	sessionStorage.setItem("_lv", Base64.encode(location.href));
-		        	location.replace('./signup');
+		        	location.replace('/signup');
 		        }
 		        else return true;
 	  },
@@ -509,20 +509,20 @@ var Auth = {
 		    var encodedAuth =  sessionStorage.getItem('_auth');
 	        var user = sessionStorage.getItem('_user');
 	        if(encodedAuth !==  null && user !== null){
-	     	 location.replace("./articles");
+	     	 location.replace("/articles");
 	        }
 
 	  },
 	  logout :function(){
 		  sessionStorage.clear();
-		  location.replace('./');
+		  location.replace('/');
 	  },
 	  updateSignupButton : function(user){
 	  	//
 		if (user) {
 			$('.signUp')
 					.html("<i class='fa fa-gear'></i>" + user.name)
-					.attr("href", "./account")
+					.attr("href", "/account")
 					.css('border-radius','30px')
 					.css('padding',".3em 1em .3em 1em")
 					.css('-webkit-box-shadow '," 0px 0px 0px 0px rgba(13,12,13,1)");

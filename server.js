@@ -1,9 +1,12 @@
 var express = require('express');
 var fs      = require('fs');
 var path = require('path');
-var useragent = require('useragent');
-useragent(true);
-//var app = express();
+
+var sitemap = require("./modules/sitemap.js");
+var urlbuilder = new sitemap.URLBuilder();
+var xmlBuilder = new sitemap.xmlBuilder();
+
+
 
 function server(){
 	this.app = express();
@@ -11,13 +14,21 @@ function server(){
 	this.ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
     this.configRoutesDirs = function(){ 
     	 
+    		//init urlmap
+			xmlBuilder.readSiteMap(function(urls){
+				for(var i = 0; i < urls.length; i++){
+					urlbuilder.urlset.url.push(urls[i]);
+				}
+			});
+
     	 this.app.use('/css',express.static(path.join(__dirname, '/css')))
 			    .use('/js',express.static(path.join(__dirname, '/js')))
 				.use('/img',express.static(path.join(__dirname, '/img')))
 				.use('/sitemap',express.static(path.join(__dirname, '/sitemap.xml')))
+				.use('/BingSiteAuth.xml',express.static(path.join(__dirname, '/BingSiteAuth.xml')))
 				.use(require('prerender-node').set('prerenderToken', 'qgpXq9plHix3AZDCa3Xp'))
 				.get('/', function(req, res) {
-					checkUserAgent(req);
+					
 			    	res.sendFile(path.join(__dirname + '/templates/home.html'));
 				})
 				.get('/explore', function(req, res) {
@@ -39,8 +50,20 @@ function server(){
 			    	res.sendFile(path.join(__dirname + '/templates/account.html'));
 				})
 				.get('/:author/articles/:id/:title', function(req, res) {
-					
+					var fullUrl = req.protocol + '://' + "www.imzah.com" + req.originalUrl;
+					console.log(fullUrl);
 			    	res.sendFile(path.join(__dirname + '/templates/article.html'));
+
+			    	
+					if(!urlbuilder.ifURLPresent(fullUrl)){
+
+						var data = urlbuilder.setUrl(fullUrl);
+						var xml = xmlBuilder.convert("urlset",data);
+					    console.log(xml);
+				        if(sitemap.isReadComplete){
+							xmlBuilder.writeSiteMap(xml);
+						 }
+				   }
 				});
 		   
 			};
@@ -57,10 +80,8 @@ function server(){
 
 } //
 
-checkUserAgent = function(req){
-		var agent = useragent.parse(req.headers['user-agent']);
-		console.log("useragent: "+agent);
-	};
+
+
 
 var AppServer = new server();
 	AppServer.configRoutesDirs();

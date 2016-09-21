@@ -19,11 +19,11 @@
   },
   "homepage": "https://github.com/gagrock/imzclient_node#readme",
   "dependencies": {
+    "data2xml": "^1.2.5",
     "express": "^4.14.0",
     "prerender-node": "^2.4.0",
     "request": "^2.74.0",
-    "useragent": "^2.1.9",
-    "yamlparser": "0.0.2"
+    "xml2js": "^0.4.17"
   },
   "engines": {
     "node": ">= 0.6.0",

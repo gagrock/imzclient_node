@@ -30,7 +30,7 @@ var MainArticle = {
 			$('.comment-write-wrapper').show();
 			var lv = location.href;
 			sessionStorage.setItem('_lv', Base64.encode(lv));
-			$('.comment-author').attr('href', "./signup");
+			$('.comment-author').attr('href', "/signup");
 			log("user is null " + lv);
 		}
 		$('.comment-author').html(message);
@@ -202,22 +202,40 @@ MainArticle.validateCommentOnSubmit = function() {
 };
 
 //below are topic methods
+/*
+getTopArticleString = function(article){
+	
+	var a_id = 'ar_'+article.id;
+	
+	
+
+	var string =  "<dt><a id='"+a_id+"'>"+Base64.decode(article.title)+"</a></dt>"+
+	"<dd><a><span class='fa fa-user'></span>"+article.user.name+"</a></dd>"; 
+
+	$(".ul-explore-top").on('click','#'+a_id,function(){
+	window.location.href = h_href;
+	});
+
+	return string;
+	 
+}
+*/
+
 
 MainArticle.getTopArticleString = function(article) {
 	var tr_id = 'tr_'+article.id;
 	var fp = article.user.username+'/articles/'+article.id+"/"+Base64.decode(article.title).split(" ").join("-");
-	var h_href = "./"+fp;
-
+	var h_href = "/"+fp;
+		console.log("url== ",h_href);
 	var string= "<dt><a  id= '"+tr_id+"'>" +
-		Base64.decode(article.title) + "</a></dt>"+
+		Base64.decode(article.title) + " </a></dt>"+
 		"<dd><a><span class='fa fa-user'></span>"+
 		article.user.name + "</a></dd>";
 
 	$('.suggest-wrapper').on('click','#'+tr_id,function(){
 		$("html, body").animate({ scrollTop: 0 }, 300);
 			setTimeout(function(){
-			location.href = h_href;
-			location.reload();
+			location.href = h_href;	
 		}, 1000);
 
 	});
